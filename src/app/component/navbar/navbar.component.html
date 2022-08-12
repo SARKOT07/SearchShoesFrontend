@@ -1,0 +1,11 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Search Shoes</a>
+      <div class="offcanvas-body">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search"  [ngModelOptions]="{standalone: true}">
+        </form>
+      </div>
+    </div>
+</nav>
+<app-search></app-search>

@@ -1,0 +1,34 @@
+
+
+<div *ngFor="let  shoe of shoes" class="card card-body mb-2">
+    <div>
+        <div class=" card d-flex justify-content-end" >
+            <img class="card-img-top" [src]="shoe.imagen">
+            <ul class="pull-right">
+                <p class="card-text"><small class="text-muted">Fecha de Lanzamiento: {{shoe.date_time_with_timezone | date : 'dd-MMM-YYYY' }} </small></p>
+                <li class="text-right"> 
+                    Marca: {{shoe.brand}}
+                </li>
+                <li>
+                    Modelo: {{shoe.model}}
+                </li>
+                <li>
+                    Nombre de la tienda: {{shoe.store_name}}
+                </li>
+                <li>
+                    Direccion de la tienda: {{shoe.store_address}}
+                </li>
+                <li>
+                    <strong>
+                        Precio: {{shoe.price}} $
+                    </strong>
+                    
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
