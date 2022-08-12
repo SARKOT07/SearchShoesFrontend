@@ -5,6 +5,6 @@ export interface ListShoesDTO{
     price: number,
     store_name: string,
     store_address: string,
-    date_time_with_timezone: string,
+    release_date: Date,
     imagen: string
 }

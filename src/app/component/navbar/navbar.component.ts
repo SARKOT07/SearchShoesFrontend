@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   filter: string = '';
   shoes: ListShoesDTO[] = [];
   date: string = "";
+  pagina: number = 0;
   constructor(
     private  searchBrand: SearchBrand,
     private  searchModel: SearchModel,
@@ -31,20 +32,19 @@ export class NavbarComponent implements OnInit {
     .subscribe( 
       res => {
         this.shoes = res;
-        console.log(res);
       }, 
     ) 
     
   }
 
   searchData(search: string, filter: string){
+
     if(filter == 'Marca'){
 
         this.searchBrand.execute(search.toLowerCase())
         .subscribe( 
           res => {
             this.shoes = res;
-            console.log(this.shoes);
           }, 
         ) 
       
@@ -54,7 +54,6 @@ export class NavbarComponent implements OnInit {
       .subscribe( 
         res => {
           this.shoes = res;
-          console.log(res);
         }, 
       ) 
 
@@ -64,7 +63,6 @@ export class NavbarComponent implements OnInit {
       .subscribe( 
         res => {
           this.shoes = res;
-          console.log(res);
         }, 
       ) 
 

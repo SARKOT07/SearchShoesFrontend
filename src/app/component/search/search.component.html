@@ -1,24 +1,24 @@
 <div class="container">
     <div class="row">
-        <div *ngFor="let  shoe of shoes"  class="card card-body mb-2">
-            <div>
-                <div class=" card d-flex justify-content-end" >
-                    <img class="card-img-top" [src]="shoe.imagen">
-                    <ul class="pull-right">
-                        <p class="card-text"><small class="text-muted">Fecha de Lanzamiento: {{shoe.date_time_with_timezone | date : 'dd-MMM-YYYY' }} </small></p>
-                        <li class="text-right"> 
+        <div *ngFor="let  shoe of shoes | paginate:{itemsPerPage: 6, currentPage: pagina}"  class="col-xs-10 mt-2 mb-2 col-sm-6 col-md-4">
+            <div class="card d-flex">
+                <img class="card-img-top img" [src]="shoe.imagen">
+                <div class=" card d-flex justify-content-end">
+                    <p class="text-center"><small class="p-2 mb-2 bg-secondary text-white card-text fecha">Fecha de Lanzamiento: {{ getDate(shoe.release_date)}} </small></p>
+                    <ul>
+                        <li class="card-text"> 
                             Marca: {{shoe.brand}}
                         </li>
-                        <li>
+                        <li class="card-text">
                             Modelo: {{shoe.model}}
                         </li>
-                        <li>
+                        <li class="card-text">
                             Nombre de la tienda: {{shoe.store_name}}
                         </li>
-                        <li>
+                        <li class="card-text">
                             Direccion de la tienda: {{shoe.store_address}}
                         </li>
-                        <li>
+                        <li class="card-text">
                             <strong>
                                 Precio: {{shoe.price}} $
                             </strong>
@@ -27,6 +27,9 @@
                 </div>
             </div>
         </div>
+            <pagination-controls  (pageChange)="pagina= $event" class="pagination-controls"></pagination-controls>
     </div>
 </div>
+
+
 

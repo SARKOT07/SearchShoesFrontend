@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Search Shoes</a>
+      <a class="navbar-brand" href="#"><strong>Search Shoes</strong></a>
       <div class="offcanvas-body">
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search"  [ngModelOptions]="{standalone: true}" (keyup.enter)="searchData(search,filter)">
@@ -25,4 +25,4 @@
 
 
 
-<app-search [shoes]="shoes"></app-search>
+<app-search [shoes]="shoes" [pagina]="pagina"></app-search>
