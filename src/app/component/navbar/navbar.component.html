@@ -3,9 +3,26 @@
       <a class="navbar-brand" href="#">Search Shoes</a>
       <div class="offcanvas-body">
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search"  [ngModelOptions]="{standalone: true}">
+          <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search"  [ngModelOptions]="{standalone: true}" (keyup.enter)="searchData(search,filter)">
         </form>
       </div>
+      <div> 
+        <select aria-label="Toggle navigation" style="font-size: 13px" [(ngModel)]="filter" class="bg-light form-select filter">
+            <option datos="Marca" selected>Marca</option>
+            <option datos="Modelo" selected>Modelo</option>
+            <option datos="Tienda" selected>Tienda</option>
+        </select>
+    </div>
+    <div>
+      <li class="nav-item">
+        <input style="font-size: 14px" [(ngModel)]="date" type="date" name="trip-start" min="1940-01-01" max="2025-12-31"  class="form-select-lg fecha" (keyup.enter)="searchReleaseFecha(date) ">
+      </li>
+    </div>
     </div>
 </nav>
-<app-search></app-search>
+
+
+
+
+
+<app-search [shoes]="shoes"></app-search>

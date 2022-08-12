@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ListShoesDTO } from '../../../app/dto/listShoesDTO';
+import { SearchBrand } from '../../../app/service/SearchBrand.service';
+import { SearchModel } from '../../../app/service/SearchModel.service';
+import { SearchReleaseDate } from '../../../app/service/SearchReleaseDate.service';
+import { SearchStore } from '../../../app/service/SearchStore.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +12,62 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   search: string = '';
-  constructor() { }
+  filter: string = '';
+  shoes: ListShoesDTO[] = [];
+  date: string = "";
+  constructor(
+    private  searchBrand: SearchBrand,
+    private  searchModel: SearchModel,
+    private  searchStore: SearchStore,
+    private  searchReleaseDate: SearchReleaseDate
+    ) { }
 
   ngOnInit(): void {
   }
 
+  searchReleaseFecha(date: string){
+
+    this.searchReleaseDate.execute(date)
+    .subscribe( 
+      res => {
+        this.shoes = res;
+        console.log(res);
+      }, 
+    ) 
+    
+  }
+
+  searchData(search: string, filter: string){
+    if(filter == 'Marca'){
+
+        this.searchBrand.execute(search.toLowerCase())
+        .subscribe( 
+          res => {
+            this.shoes = res;
+            console.log(this.shoes);
+          }, 
+        ) 
+      
+    }else if(filter == 'Modelo'){
+
+      this.searchModel.execute(search.toLowerCase())
+      .subscribe( 
+        res => {
+          this.shoes = res;
+          console.log(res);
+        }, 
+      ) 
+
+    }else if(filter == 'Tienda'){
+
+      this.searchStore.execute(search.toLowerCase())
+      .subscribe( 
+        res => {
+          this.shoes = res;
+          console.log(res);
+        }, 
+      ) 
+
+    }
+  }
 }

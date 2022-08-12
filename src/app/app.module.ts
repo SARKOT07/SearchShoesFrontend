@@ -22,6 +22,6 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent,SearchComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+.filter {
+    border: 3px solid transparent;
+    border-radius: 10%;
+    width: 100px;
+    height: 45px;
+    border-color: rgb(109, 109, 109);
+    color: rgb(0, 0, 0);
+}
+
+.fecha{
+    border: 3px;
+    border-radius: 5%;
+    width: 120px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+}
