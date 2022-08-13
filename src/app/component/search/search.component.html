@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div *ngFor="let  shoe of shoes | paginate:{itemsPerPage: 6, currentPage: pagina}"  class="col-xs-10 mt-2 mb-2 col-sm-6 col-md-4">
+        <div *ngFor="let  shoe of shoes | paginate:{itemsPerPage: 3, currentPage: pagina}"  class="col-xs-10 mt-2 mb-2 col-sm-6 col-md-4">
             <div class="card d-flex">
                 <img class="card-img-top img" [src]="shoe.imagen">
                 <div class=" card d-flex justify-content-end">
