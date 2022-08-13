@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 export class SearchModel {
 
   constructor(private http: HttpClient ) { }
-
+  //controlador que consume la busqueda de los zapatos con un modelo determinado en la API
   execute(model: string): Observable<ListShoesDTO[]>{
     return this.http.get<ListShoesDTO[]>(`http://localhost:3000/api/shoes/filter/model?model=${model}`).pipe(map((Response : any) =>{ return Response;}))
   }

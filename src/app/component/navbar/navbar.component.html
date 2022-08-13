@@ -3,6 +3,7 @@
       <a class="navbar-brand" href="#"><strong>Search Shoes</strong></a>
       <div class="offcanvas-body">
         <form class="d-flex" role="search">
+           <!--Barra de busqueda donde tendras que elegir la option(filtrado) y buscar el zapato q buscas, le das Enter para buscar.(le pasa por parametro la data, es decir, lo que buscaste y el tipo de filtrado)-->
           <input class="form-control me-2" type="text" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="search"  [ngModelOptions]="{standalone: true}" (keyup.enter)="searchData(search,filter)">
         </form>
       </div>
@@ -15,6 +16,7 @@
     </div>
     <div>
       <li class="nav-item">
+        <!--Componente donde buscas la fecha que consume el servicio que busca por fecha de lanzamiento, le das Enter para buscar.(le pasa por parametro el date que buscaste)-->
         <input style="font-size: 14px" [(ngModel)]="date" type="date" name="trip-start" min="1940-01-01" max="2025-12-31"  class="form-select-lg fecha" (keyup.enter)="searchReleaseFecha(date) ">
       </li>
     </div>

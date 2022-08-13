@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row">
+        <!-- Muestra los shoes que busca cuando inicializa el ciclo de vida, o los zapatos que vienen del input de la busqueda del componente del navbar-->
         <div *ngFor="let  shoe of shoes | paginate:{itemsPerPage: 4, currentPage: pagina}"  class="col-xs-10 mt-2 mb-2 col-sm-5 col-sm-4 w-50">
             <div class="card d-flex">
                 <img class="card-img-top img" [src]="shoe.imagen">

@@ -11,6 +11,7 @@ import { SearchAll } from '../../../app/service/SearchAll.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit, OnChanges {
+  //Componente Search, donde contiene los zapatos buscados, es decir, las cards de los zapatos
   @Input() 
   shoes: ListShoesDTO[] = [];
   @Input() 
@@ -27,7 +28,7 @@ export class SearchComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.pagina = 1;
   }
-
+  //funcion donde usa por injection de dependencia el servicio que busca todo los zapatos
   getAll(){
     this.searchAll.execute()
     .subscribe( 
